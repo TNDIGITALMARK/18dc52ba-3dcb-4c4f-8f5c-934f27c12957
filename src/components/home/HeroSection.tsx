@@ -16,7 +16,7 @@ export function HeroSection() {
           priority
         />
         {/* Dark Overlay - behind content, in front of background */}
-        <div className="absolute inset-0 bg-black/70" />
+        <div className="absolute inset-0 bg-black/85" />
       </div>
 
       {/* Content */}
@@ -24,10 +24,10 @@ export function HeroSection() {
         <div className="inline-block mb-4 px-4 py-2 bg-accent/90 backdrop-blur-sm rounded-full text-accent-foreground text-sm font-semibold tracking-wide">
           ⛳ STERLING OAKS GOLF CLUB
         </div>
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold mb-6 tracking-tight leading-tight">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold mb-6 tracking-tight leading-tight" style={{ textShadow: '0 2px 10px rgba(0, 0, 0, 0.8)' }}>
           Where Tradition<br />Meets Excellence
         </h1>
-        <p className="text-lg md:text-xl mb-10 max-w-3xl mx-auto text-white/95 leading-relaxed">
+        <p className="text-lg md:text-xl mb-10 max-w-3xl mx-auto text-white/95 leading-relaxed" style={{ textShadow: '0 1px 8px rgba(0, 0, 0, 0.7)' }}>
           Experience championship golf on three award-winning courses designed by legendary architect Robert Trent Jones II.
           Immerse yourself in luxury, tradition, and unparalleled service.
         </p>

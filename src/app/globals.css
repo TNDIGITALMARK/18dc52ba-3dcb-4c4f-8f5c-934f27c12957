@@ -387,6 +387,15 @@ html {
   animation: scaleIn 0.5s ease-out;
 }
 
+/* GreenSweep Brand Color Utilities */
+.text-grass-green {
+  color: hsl(var(--accent));
+}
+
+.text-grass-green:hover {
+  color: hsl(145 50% 50%);
+}
+
 /* Smooth transitions on interactive elements */
 a, button {
   transition: all 0.2s ease-in-out;

@@ -71,11 +71,11 @@ export function Footer() {
           {/* Services */}
           <div>
             <h3 className="font-heading font-semibold text-lg mb-4">Our Services</h3>
-            <ul className="space-y-2 text-white/80 text-sm">
-              <li>Lawn Care & Maintenance</li>
-              <li>Landscaping</li>
-              <li>Hardscaping</li>
-              <li>Custom Design</li>
+            <ul className="space-y-2 text-sm">
+              <li className="text-grass-green">Lawn Care & Maintenance</li>
+              <li className="text-grass-green">Landscaping</li>
+              <li className="text-grass-green">Hardscaping</li>
+              <li className="text-grass-green">Custom Design</li>
             </ul>
           </div>
 

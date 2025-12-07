@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Montserrat, Open_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { QueryProvider } from "@/components/query-provider";
@@ -8,22 +8,23 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
-// Elegant serif font for headings
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+// Modern sans-serif for headings - bold and professional
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
-// Clean sans-serif for body text
-const inter = Inter({
-  variable: "--font-inter",
+// Clean sans-serif for body text - readable and natural
+const openSans = Open_Sans({
+  variable: "--font-open-sans",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Sterling Oaks Golf Club | Championship Golf Experience",
-  description: "Experience championship golf on three award-winning courses designed by Robert Trent Jones II. Premium memberships, events, and world-class amenities.",
+  title: "GreenSweep Niagara | Professional Landscaping Services in Niagara",
+  description: "Transform your Niagara property with GreenSweep's professional landscaping services. Lawn care, hardscaping, custom design, and complete yard transformations. Local expertise since 2024.",
 };
 
 export default function RootLayout({
@@ -37,7 +38,7 @@ export default function RootLayout({
 
       </head>
       <body
-        className={`${inter.variable} ${playfair.variable} antialiased font-sans`}
+        className={`${openSans.variable} ${montserrat.variable} antialiased font-sans`}
       >
         <QueryProvider>
           <ZyloProvider>

@@ -1,299 +1,283 @@
-import { Header } from '@/components/layout/Header';
-import { Footer } from '@/components/layout/Footer';
-import { HeroSection } from '@/components/home/HeroSection';
-import { CourseCard } from '@/components/courses/CourseCard';
-import Image from 'next/image';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { Star, Award, Users, Sparkles, Trophy, Clock, MapPin } from 'lucide-react';
-
-// Mock data for MVP - will be replaced with API calls
-const courses = [
-  {
-    id: 1,
-    slug: 'heritage-course',
-    name: 'The Heritage Course',
-    tagline: 'A timeless Robert Trent Jones II masterpiece',
-    parTotal: 72,
-    yardageTotal: 7245,
-    difficultyRating: 73.5,
-    heroImageUrl: '/images/generated/heritage-course-clubhouse.png',
-    location: 'Main Campus',
-  },
-  {
-    id: 2,
-    slug: 'lakeside-course',
-    name: 'The Lakeside Course',
-    tagline: 'Spectacular lakefront golf experience',
-    parTotal: 71,
-    yardageTotal: 7120,
-    difficultyRating: 72.8,
-    heroImageUrl: '/images/generated/lakeside-course-bridge.png',
-    location: 'West Campus',
-  },
-  {
-    id: 3,
-    slug: 'ridge-course',
-    name: 'The Ridge Course',
-    tagline: 'Mountain vistas and dramatic elevation',
-    parTotal: 72,
-    yardageTotal: 6985,
-    difficultyRating: 71.5,
-    heroImageUrl: '/images/generated/ridge-course-mountain-view.png',
-    location: 'North Campus',
-  },
-];
-
-const testimonials = [
-  {
-    id: 1,
-    name: 'Michael Anderson',
-    role: 'Golf Membership',
-    quote: 'Sterling Oaks has exceeded every expectation. The courses are impeccably maintained, and the staff makes you feel like family.',
-    rating: 5,
-  },
-  {
-    id: 2,
-    name: 'Sarah Thompson',
-    role: 'Premier Membership',
-    quote: 'From the moment I joined, I knew this was special. The attention to detail and level of service is truly world-class.',
-    rating: 5,
-  },
-  {
-    id: 3,
-    name: 'Robert Chen',
-    role: 'Golf Membership',
-    quote: 'The Heritage Course is my favorite. Every hole presents a unique challenge, and the scenery is absolutely breathtaking.',
-    rating: 5,
-  },
-];
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ServiceCard } from "@/components/ui/service-card";
+import { TestimonialCard } from "@/components/ui/testimonial-card";
+import { CTASection } from "@/components/ui/cta-section";
+import { Navigation } from "@/components/layout/navigation";
+import { Footer } from "@/components/layout/footer";
+import {
+  Sprout,
+  Hammer,
+  Scissors,
+  PenTool,
+  CheckCircle,
+  ArrowRight,
+  Award,
+  Users,
+  Clock,
+} from "lucide-react";
 
 export default function HomePage() {
+  const services = [
+    {
+      icon: Scissors,
+      title: "Lawn Care & Maintenance",
+      description:
+        "Keep your lawn pristine year-round with our professional maintenance services.",
+      features: [
+        "Weekly or bi-weekly mowing",
+        "Edge trimming and cleanup",
+        "Fertilization programs",
+        "Seasonal cleanup services",
+      ],
+      priceFrom: "$150/month",
+      imageUrl: "/generated/lawn-care-service.png",
+    },
+    {
+      icon: Sprout,
+      title: "Landscaping",
+      description:
+        "Transform your property with beautiful gardens, plants, and natural features.",
+      features: [
+        "Garden design and installation",
+        "Plant selection and placement",
+        "Mulching and edging",
+        "Seasonal plantings",
+      ],
+      priceFrom: "Custom Quote",
+      imageUrl: "/generated/landscaping-garden.png",
+    },
+    {
+      icon: Hammer,
+      title: "Hardscaping",
+      description:
+        "Create stunning outdoor living spaces with premium stonework and structures.",
+      features: [
+        "Patios and walkways",
+        "Retaining walls",
+        "Outdoor kitchens",
+        "Fire pits and seating areas",
+      ],
+      priceFrom: "$3,500+",
+      imageUrl: "/generated/hardscaping-patio.png",
+    },
+    {
+      icon: PenTool,
+      title: "Custom Landscape Design",
+      description:
+        "Bring your vision to life with personalized design and complete yard transformations.",
+      features: [
+        "Professional design consultation",
+        "3D visualization",
+        "Complete project management",
+        "Full property transformation",
+      ],
+      priceFrom: "$200 consultation",
+      imageUrl: "/generated/custom-design.png",
+    },
+  ];
+
+  const testimonials = [
+    {
+      name: "Jennifer Morrison",
+      location: "St. Catharines, ON",
+      rating: 5,
+      text: "GreenSweep transformed our backyard into an absolute paradise! The patio they built is stunning, and our kids love the new play area. Mike and Sarah were professional, creative, and a pleasure to work with.",
+      projectType: "Full Yard Makeover",
+    },
+    {
+      name: "David Chen",
+      location: "Niagara Falls, ON",
+      rating: 5,
+      text: "Best landscaping company in the region! They maintain our lawn weekly and it's never looked better. Reliable, affordable, and they genuinely care about quality work.",
+      projectType: "Lawn Maintenance",
+    },
+    {
+      name: "Patricia Williams",
+      location: "Welland, ON",
+      rating: 5,
+      text: "The custom design service exceeded our expectations. They listened to our needs, created a beautiful plan, and executed it flawlessly. Our property value has definitely increased!",
+      projectType: "Custom Design",
+    },
+  ];
+
+  const whyChooseUs = [
+    {
+      icon: Award,
+      title: "15+ Years Experience",
+      description:
+        "Combined expertise from Mike and Sarah, bringing professional craftsmanship to every project.",
+    },
+    {
+      icon: Users,
+      title: "Locally Owned & Operated",
+      description:
+        "Based in Niagara since 2024, we understand the local climate and your needs.",
+    },
+    {
+      icon: CheckCircle,
+      title: "Quality Guaranteed",
+      description:
+        "We stand behind our work with comprehensive warranties and ongoing support.",
+    },
+    {
+      icon: Clock,
+      title: "Reliable Service",
+      description:
+        "On-time arrivals, clear communication, and projects completed on schedule.",
+    },
+  ];
+
   return (
-    <>
-      <Header />
+    <main className="min-h-screen">
+      <Navigation />
 
-      <main>
-        {/* Hero Section */}
-        <HeroSection />
+      {/* Hero Section */}
+      <section className="relative h-[600px] md:h-[700px] flex items-center justify-center overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url(/generated/hero-landscape.png)" }}
+        >
+          <div className="absolute inset-0 bg-gradient-overlay-dark"></div>
+        </div>
 
-        {/* Championship Courses Section */}
-        <section className="py-20 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">
-                Our Championship Courses
-              </h2>
-              <div className="w-24 h-1 bg-accent mx-auto mb-6" />
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Experience world-class golf on three distinctly challenging courses, each designed to test your skills and reward precision
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {courses.map((course) => (
-                <CourseCard key={course.id} {...course} />
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Membership CTA Section */}
-        <section className="py-20 bg-primary text-primary-foreground relative overflow-hidden">
-          <div className="absolute inset-0 z-0">
-            <Image
-              src="/images/generated/membership-golfers-community.png"
-              alt="Sterling Oaks Members"
-              fill
-              className="object-cover opacity-20"
-            />
-          </div>
-          <div className="container mx-auto px-4 relative z-10 text-center">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">
-              Elevate Your Game at Sterling Oaks
-            </h2>
-            <p className="text-lg mb-8 max-w-3xl mx-auto text-primary-foreground/90 leading-relaxed">
-              Join a community of passionate golfers and enjoy unparalleled access to our world-class facilities. Our memberships include priority tee times, exclusive events, access to the elite practice academy, and unforgettable experiences. Discover the privilege of belonging to Sterling Oaks Golf Club.
-            </p>
+        <div className="container mx-auto px-4 relative z-10 text-center text-white">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in-up">
+            Transform Your Outdoor Space
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-white/90 animate-fade-in-up">
+            Professional landscaping services in Niagara. From beautiful lawns to complete yard
+            transformations, we create outdoor spaces your family will love.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in">
+            <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 text-lg px-8">
+              <Link href="/contact">
+                Get Your Free Quote
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
+            </Button>
             <Button
               asChild
               size="lg"
-              className="bg-accent text-accent-foreground hover:bg-accent/90 text-base px-8 py-6"
+              variant="outline"
+              className="bg-transparent text-white border-2 border-white hover:bg-white hover:text-primary text-lg px-8"
             >
-              <Link href="/membership">Discover Membership Tiers</Link>
+              <Link href="/services">View Our Services</Link>
             </Button>
           </div>
-        </section>
 
-        {/* Facilities Section */}
-        <section className="py-20 bg-muted">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">
-                World-Class Facilities
-              </h2>
-              <div className="w-24 h-1 bg-accent mx-auto mb-6" />
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Every detail designed to enhance your golfing experience
-              </p>
+          {/* Trust Indicators */}
+          <div className="mt-12 flex flex-wrap items-center justify-center gap-8 text-sm text-white/80">
+            <div className="flex items-center gap-2">
+              <CheckCircle className="w-5 h-5" />
+              <span>15+ Years Experience</span>
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="bg-card p-8 rounded-lg border text-center hover:shadow-lg transition-all hover:-translate-y-1">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
-                  <Trophy className="h-8 w-8 text-primary" />
-                </div>
-                <h3 className="text-xl font-serif font-semibold mb-3">Championship Courses</h3>
-                <p className="text-muted-foreground text-sm">
-                  Three award-winning courses designed by Robert Trent Jones II
-                </p>
-              </div>
-
-              <div className="bg-card p-8 rounded-lg border text-center hover:shadow-lg transition-all hover:-translate-y-1">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
-                  <Sparkles className="h-8 w-8 text-primary" />
-                </div>
-                <h3 className="text-xl font-serif font-semibold mb-3">Practice Facilities</h3>
-                <p className="text-muted-foreground text-sm">
-                  State-of-the-art driving range, putting greens, and short game areas
-                </p>
-              </div>
-
-              <div className="bg-card p-8 rounded-lg border text-center hover:shadow-lg transition-all hover:-translate-y-1">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
-                  <Award className="h-8 w-8 text-primary" />
-                </div>
-                <h3 className="text-xl font-serif font-semibold mb-3">Golf Academy</h3>
-                <p className="text-muted-foreground text-sm">
-                  Expert instruction from PGA professionals with cutting-edge technology
-                </p>
-              </div>
-
-              <div className="bg-card p-8 rounded-lg border text-center hover:shadow-lg transition-all hover:-translate-y-1">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
-                  <Users className="h-8 w-8 text-primary" />
-                </div>
-                <h3 className="text-xl font-serif font-semibold mb-3">Clubhouse & Dining</h3>
-                <p className="text-muted-foreground text-sm">
-                  Elegant clubhouse with fine dining and private event spaces
-                </p>
-              </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="w-5 h-5" />
+              <span>Locally Owned Since 2024</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="w-5 h-5" />
+              <span>Serving All Niagara Region</span>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Testimonials Section */}
-        <section className="py-20 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">
-                What Our Members Say
-              </h2>
-              <div className="w-24 h-1 bg-accent mx-auto mb-6" />
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Join a community of passionate golfers who call Sterling Oaks home
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              {testimonials.map((testimonial) => (
-                <div
-                  key={testimonial.id}
-                  className="bg-card p-8 rounded-lg border shadow-md hover:shadow-xl transition-shadow"
-                >
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 fill-accent text-accent" />
-                    ))}
-                  </div>
-                  <p className="text-foreground mb-6 leading-relaxed italic">
-                    &quot;{testimonial.quote}&quot;
-                  </p>
-                  <div className="border-t pt-4">
-                    <p className="font-semibold text-foreground">{testimonial.name}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+      {/* About Section */}
+      <section className="spacing-section bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+              Welcome to GreenSweep Niagara
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Founded in 2024 by Mike and Sarah, GreenSweep Niagara brings over 15 years of
+              combined landscaping expertise to the Niagara region. We're a locally owned business
+              dedicated to creating beautiful, functional outdoor spaces that enhance your
+              property and your lifestyle.
+            </p>
           </div>
-        </section>
 
-        {/* Stats Section */}
-        <section className="py-20 bg-primary text-primary-foreground">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              <div className="space-y-2">
-                <div className="text-5xl md:text-6xl font-bold text-accent">30+</div>
-                <div className="text-sm md:text-base text-primary-foreground/90">Years of Excellence</div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {whyChooseUs.map((item, index) => (
+              <div
+                key={index}
+                className="text-center p-6 bg-card rounded-lg shadow-sm border border-border hover:shadow-md transition-shadow"
+              >
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <item.icon className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="font-heading font-semibold text-lg mb-2 text-foreground">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {item.description}
+                </p>
               </div>
-              <div className="space-y-2">
-                <div className="text-5xl md:text-6xl font-bold text-accent">500+</div>
-                <div className="text-sm md:text-base text-primary-foreground/90">Member Families</div>
-              </div>
-              <div className="space-y-2">
-                <div className="text-5xl md:text-6xl font-bold text-accent">15+</div>
-                <div className="text-sm md:text-base text-primary-foreground/90">Tournament Championships</div>
-              </div>
-              <div className="space-y-2">
-                <div className="text-5xl md:text-6xl font-bold text-accent">75K+</div>
-                <div className="text-sm md:text-base text-primary-foreground/90">Rounds Played Annually</div>
-              </div>
-            </div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Quick Links Section */}
-        <section className="py-20 bg-muted">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Events */}
-              <div className="bg-card p-8 rounded-lg border text-center hover:shadow-lg transition-all hover:-translate-y-1">
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/10 rounded-full mb-4">
-                  <Clock className="h-6 w-6 text-primary" />
-                </div>
-                <h3 className="text-2xl font-serif font-semibold mb-4">Events Calendar</h3>
-                <p className="text-muted-foreground mb-6">
-                  Join us for tournaments, clinics, and exclusive member events throughout the year.
-                </p>
-                <Button asChild variant="outline">
-                  <Link href="/events">View Events</Link>
-                </Button>
-              </div>
-
-              {/* Academy */}
-              <div className="bg-card p-8 rounded-lg border text-center hover:shadow-lg transition-all hover:-translate-y-1">
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/10 rounded-full mb-4">
-                  <Award className="h-6 w-6 text-primary" />
-                </div>
-                <h3 className="text-2xl font-serif font-semibold mb-4">Golf Academy</h3>
-                <p className="text-muted-foreground mb-6">
-                  Improve your game with our PGA professionals and state-of-the-art training facilities.
-                </p>
-                <Button asChild variant="outline">
-                  <Link href="/academy">Learn More</Link>
-                </Button>
-              </div>
-
-              {/* Contact */}
-              <div className="bg-card p-8 rounded-lg border text-center hover:shadow-lg transition-all hover:-translate-y-1">
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/10 rounded-full mb-4">
-                  <MapPin className="h-6 w-6 text-primary" />
-                </div>
-                <h3 className="text-2xl font-serif font-semibold mb-4">Visit Us</h3>
-                <p className="text-muted-foreground mb-6">
-                  Schedule a tour or contact us to learn more about membership opportunities.
-                </p>
-                <Button asChild variant="outline">
-                  <Link href="/contact">Contact Us</Link>
-                </Button>
-              </div>
-            </div>
+      {/* Services Overview Section */}
+      <section className="spacing-section bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+              Our Services
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              From regular lawn maintenance to complete property transformations, we offer
+              comprehensive landscaping solutions tailored to your needs.
+            </p>
           </div>
-        </section>
-      </main>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            {services.map((service, index) => (
+              <ServiceCard key={index} {...service} />
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Button asChild size="lg" variant="outline" className="font-semibold">
+              <Link href="/services">
+                View All Services & Pricing
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="spacing-section bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+              What Our Clients Say
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Don't just take our word for it. Hear from satisfied homeowners across the Niagara
+              region.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {testimonials.map((testimonial, index) => (
+              <TestimonialCard key={index} {...testimonial} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <CTASection
+        title="Ready to Transform Your Outdoor Space?"
+        description="Get a free, no-obligation quote for your landscaping project. We'll work with you to create a beautiful, functional outdoor space that fits your budget and exceeds your expectations."
+      />
 
       <Footer />
-    </>
+    </main>
   );
 }

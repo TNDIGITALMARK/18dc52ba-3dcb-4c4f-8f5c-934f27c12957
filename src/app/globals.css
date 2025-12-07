@@ -1,60 +1,70 @@
 @import "tailwindcss";
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* GreenSweep Niagara Design System - Natural, Trustworthy Landscaping Brand */
+/* All colors MUST be HSL. */
+
+/* Import Google Fonts - Montserrat for headings, Open Sans for body */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Premium golf club color palette */
-  /* Off-white background with charcoal text */
-  --background: 40 20% 97%;
-  --foreground: 0 0% 15%;
+  /* Natural earth-tone color palette inspired by Niagara landscapes */
 
-  /* Clean white cards with charcoal text */
+  /* Soft neutral background with warm earthy text */
+  --background: 40 15% 97%;
+  --foreground: 25 15% 20%;
+
+  /* Clean white cards with natural text */
   --card: 0 0% 100%;
-  --card-foreground: 0 0% 15%;
+  --card-foreground: 25 15% 20%;
 
   /* Popovers with white background */
   --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 15%;
+  --popover-foreground: 25 15% 20%;
 
-  /* Primary: Deep forest green with white text */
-  --primary: 155 30% 25%;
+  /* Primary: Deep forest green - trust and nature */
+  --primary: 145 40% 28%;
   --primary-foreground: 0 0% 100%;
 
-  /* Secondary: Gold/champagne accent */
-  --secondary: 45 65% 60%;
-  --secondary-foreground: 0 0% 15%;
+  /* Secondary: Warm stone gray - hardscaping and natural materials */
+  --secondary: 30 8% 50%;
+  --secondary-foreground: 0 0% 100%;
 
-  /* Muted: Light green-gray with darker text */
-  --muted: 155 15% 92%;
-  --muted-foreground: 0 0% 40%;
+  /* Muted: Light sage green with natural text */
+  --muted: 145 20% 92%;
+  --muted-foreground: 25 10% 35%;
 
-  /* Accent: Gold for highlights */
-  --accent: 45 75% 55%;
-  --accent-foreground: 0 0% 15%;
+  /* Accent: Fresh grass green for highlights and CTAs */
+  --accent: 145 45% 45%;
+  --accent-foreground: 0 0% 100%;
 
-  /* Destructive: Elegant red */
-  --destructive: 0 65% 48%;
+  /* Destructive: Natural terracotta red */
+  --destructive: 8 70% 50%;
   --destructive-foreground: 0 0% 100%;
 
-  /* Borders: Soft neutral */
-  --border: 0 0% 88%;
-  --input: 0 0% 88%;
-  --ring: 155 30% 25%;
+  /* Borders: Soft natural stone */
+  --border: 30 10% 85%;
+  --input: 30 10% 85%;
+  --ring: 145 40% 28%;
 
-  /* Slightly more rounded for elegance */
+  /* Organic rounded corners */
   --radius: 0.5rem;
 
-  /* Sidebar: Clean white with black text */
+  /* Sidebar: Clean layout (for admin/future use) */
   --sidebar-background: 0 0% 100%;
-  --sidebar-foreground: 0 0% 0%;
-  --sidebar-primary: 0 0% 0%;
+  --sidebar-foreground: 25 15% 20%;
+  --sidebar-primary: 145 40% 28%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 0 0% 96%;
-  --sidebar-accent-foreground: 0 0% 0%;
-  --sidebar-border: 0 0% 90%;
-  --sidebar-ring: 0 0% 0%;
+  --sidebar-accent: 145 20% 95%;
+  --sidebar-accent-foreground: 25 15% 20%;
+  --sidebar-border: 30 10% 88%;
+  --sidebar-ring: 145 40% 28%;
+
+  /* Custom GreenSweep variables for brand consistency */
+  --color-grass-green: 145 45% 45%;
+  --color-forest-green: 145 40% 28%;
+  --color-stone-gray: 30 8% 50%;
+  --color-warm-earth: 25 15% 20%;
+  --color-sage-light: 145 20% 92%;
 }
 
 .dark {
@@ -178,38 +188,153 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Premium golf club typography */
+/* GreenSweep Typography System */
 .font-sans {
-  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-open-sans), 'Open Sans', ui-sans-serif, system-ui, sans-serif;
 }
 
-.font-serif {
-  font-family: var(--font-playfair), ui-serif, Georgia, serif;
+.font-heading {
+  font-family: var(--font-montserrat), 'Montserrat', ui-sans-serif, system-ui, sans-serif;
 }
 
+/* Typography scale for natural hierarchy */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-playfair), ui-serif, Georgia, serif;
+  font-family: var(--font-montserrat), 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: hsl(var(--foreground));
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.875rem;
   font-weight: 600;
-  letter-spacing: -0.025em;
+}
+
+h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+h6 {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+p {
+  font-family: var(--font-open-sans), 'Open Sans', ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.7;
+  margin-bottom: 1rem;
   color: hsl(var(--foreground));
 }
 
-/* Clean button styles */
-button {
-  font-weight: 500;
+a {
+  color: hsl(var(--primary));
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-/* Subtle shadows for depth */
+a:hover {
+  color: hsl(var(--accent));
+}
+
+strong {
+  font-weight: 600;
+}
+
+/* Mobile typography adjustments */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* GreenSweep Button System */
+button {
+  font-family: var(--font-montserrat), 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+  border-radius: var(--radius);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Form Elements - Natural and accessible */
+input,
+textarea,
+select {
+  font-family: var(--font-open-sans), 'Open Sans', ui-sans-serif, system-ui, sans-serif;
+  border-radius: var(--radius);
+  border: 1px solid hsl(var(--border));
+  padding: 0.625rem 1rem;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: hsl(var(--primary));
+  box-shadow: 0 0 0 3px hsl(var(--primary) / 0.1);
+}
+
+label {
+  font-family: var(--font-montserrat), 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: hsl(var(--foreground));
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* Natural shadows for depth */
 .shadow-sm {
   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
 }
 
 .shadow {
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 0.08), 0 1px 2px -1px rgb(0 0 0 / 0.05);
 }
 
 .shadow-md {
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  box-shadow: 0 4px 8px -2px rgb(0 0 0 / 0.12), 0 2px 4px -2px rgb(0 0 0 / 0.08);
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 24px -4px rgb(0 0 0 / 0.15), 0 4px 8px -4px rgb(0 0 0 / 0.1);
+}
+
+.shadow-xl {
+  box-shadow: 0 20px 40px -8px rgb(0 0 0 / 0.18), 0 8px 16px -8px rgb(0 0 0 / 0.12);
 }
 
 /* Smooth scrolling */
@@ -282,11 +407,61 @@ img {
   transition: opacity 0.3s ease-in-out;
 }
 
-/* Premium gradient backgrounds */
-.gradient-gold {
-  background: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--secondary)) 100%);
+/* GreenSweep Natural Gradient Backgrounds */
+.gradient-forest {
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(145 50% 35%) 100%);
 }
 
-.gradient-green {
-  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(155 35% 30%) 100%);
+.gradient-grass {
+  background: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(145 45% 38%) 100%);
+}
+
+.gradient-earth {
+  background: linear-gradient(135deg, hsl(25 15% 20%) 0%, hsl(30 8% 50%) 100%);
+}
+
+.gradient-overlay-dark {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
+}
+
+.gradient-overlay-subtle {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+}
+
+/* Utility classes for landscaping imagery */
+.image-overlay {
+  position: relative;
+}
+
+.image-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5));
+  z-index: 1;
+}
+
+.image-overlay > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Natural border treatments */
+.border-natural {
+  border: 2px solid hsl(var(--border));
+}
+
+.border-forest {
+  border: 2px solid hsl(var(--primary));
+}
+
+/* Landscaping-specific spacing system (16px base) */
+.spacing-section {
+  padding: 5rem 0;
+}
+
+@media (max-width: 768px) {
+  .spacing-section {
+    padding: 3rem 0;
+  }
 }

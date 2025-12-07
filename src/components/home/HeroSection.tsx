@@ -16,7 +16,7 @@ export function HeroSection() {
           priority
         />
         {/* Dark Overlay - behind content, in front of background */}
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/70" />
       </div>
 
       {/* Content */}

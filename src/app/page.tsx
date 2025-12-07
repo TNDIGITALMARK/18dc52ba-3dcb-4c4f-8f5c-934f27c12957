@@ -141,11 +141,11 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-overlay-dark"></div>
         </div>
 
-        <div className="container mx-auto px-4 relative z-10 text-center text-white">
+        <div className="container mx-auto px-4 relative z-10 text-center hero-text-white">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in-up">
             Transform Your Outdoor Space
           </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-white/90 animate-fade-in-up">
+          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto animate-fade-in-up">
             Professional landscaping services in Niagara. From beautiful lawns to complete yard
             transformations, we create outdoor spaces your family will love.
           </p>

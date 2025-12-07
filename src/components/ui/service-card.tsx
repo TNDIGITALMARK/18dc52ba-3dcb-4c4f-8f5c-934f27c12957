@@ -31,7 +31,7 @@ export function ServiceCard({
             alt={title}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
-          <div className="absolute inset-0 bg-gradient-overlay-subtle"></div>
+          <div className="absolute inset-0 gradient-overlay-subtle"></div>
           <div className="absolute top-4 left-4 w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-lg">
             <Icon className="w-6 h-6 text-primary" />
           </div>

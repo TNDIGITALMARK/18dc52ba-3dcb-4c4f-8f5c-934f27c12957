@@ -1,5 +1,5 @@
 import { Navigation } from "@/components/layout/navigation";
-import { Footer } from "@/components/layout/footer";
+import { Footer } from "@/components/layout/Footer";
 import { CTASection } from "@/components/ui/cta-section";
 import { Award, Users, Heart, Sprout, CheckCircle, Target, Shield, TrendingUp } from "lucide-react";
 import Image from "next/image";

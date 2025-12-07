@@ -324,7 +324,7 @@ export default function ContactPage() {
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full gradient-forest text-lg"
+                    className="w-full gradient-forest btn-text-white text-lg"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (

@@ -455,6 +455,12 @@ img {
   z-index: 2;
 }
 
+/* White text for green buttons - ensures high contrast and readability */
+.btn-text-white {
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
 /* Natural border treatments */
 .border-natural {
   border: 2px solid hsl(var(--border));

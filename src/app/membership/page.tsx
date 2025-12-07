@@ -207,7 +207,7 @@ export default function MembershipPage() {
               Contact us today to schedule a tour, learn more about membership options, or begin your application.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+              <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 btn-text-white">
                 <Link href="/contact?subject=membership">Contact Us</Link>
               </Button>
               <Button

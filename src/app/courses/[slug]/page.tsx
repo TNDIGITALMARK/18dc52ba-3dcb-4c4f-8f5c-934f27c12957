@@ -238,7 +238,7 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
               Book your tee time today or contact us to learn more about membership options.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+              <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 btn-text-white">
                 <Link href="/book-tee-time">Book Tee Time</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">

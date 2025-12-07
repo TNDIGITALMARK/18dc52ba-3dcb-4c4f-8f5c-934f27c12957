@@ -35,7 +35,7 @@ export function HeroSection() {
           <Button
             asChild
             size="lg"
-            className="bg-accent text-accent-foreground hover:bg-accent/90 text-base px-10 py-7 shadow-2xl hover:shadow-accent/50 transition-all"
+            className="bg-accent text-accent-foreground hover:bg-accent/90 btn-text-white text-base px-10 py-7 shadow-2xl hover:shadow-accent/50 transition-all"
           >
             <Link href="/membership" className="flex items-center gap-2">
               Explore Memberships

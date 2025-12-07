@@ -54,7 +54,7 @@ export function Navigation() {
               </a>
             </div>
 
-            <Button asChild className="gradient-forest">
+            <Button asChild className="gradient-forest btn-text-white">
               <Link href="/contact">Get a Quote</Link>
             </Button>
           </div>
@@ -105,7 +105,7 @@ export function Navigation() {
                 </a>
               </div>
 
-              <Button asChild className="gradient-forest w-full mt-4">
+              <Button asChild className="gradient-forest btn-text-white w-full mt-4">
                 <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
                   Get a Quote
                 </Link>

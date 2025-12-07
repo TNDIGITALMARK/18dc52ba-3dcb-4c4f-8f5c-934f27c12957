@@ -71,7 +71,7 @@ export function ServiceCard({
               {priceFrom}
             </p>
           </div>
-          <Button asChild size="sm" className="gradient-grass">
+          <Button asChild size="sm" className="gradient-grass btn-text-white">
             <Link href={href}>Get Quote</Link>
           </Button>
         </div>
